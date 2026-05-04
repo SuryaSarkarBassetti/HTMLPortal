@@ -49,22 +49,52 @@ document.querySelector('.bottom .theme-switcher').addEventListener('click', () =
 });
 // Page Ele
 async function initDashBoardData() {
-    await loadModuleData();
-    generateModuleTable(window.moduleData, "moduleTableBody");
-    renderCards(window.moduleData, { hideCards: ["totalNonVerifing"] });
-    updateChartStats(window.moduleData);
-    updateChartStatsdashboard(window.moduleData);
+    await loadDashboardData();
+    updateMetaData();
+    generateModuleTable(window.TestReportModule, "moduleTableBody");
+    renderCards(window.TestReportModule, { hideCards: ["totalNonVerifing"] });
+    updateChartStats(window.TestReportModule);
+    updateChartStatsdashboard(window.TestReportModule);
+    updateEnvironmentInformation(window.EnvironmentInformation);
 }
 async function initTestCasesData() {
     const selectedModule = JSON.parse(localStorage.getItem("selectedModule"));
+    updateMetaData();
     if (!selectedModule) return;
-    await loadModuleData();
+    await loadTestModuleData(selectedModule.ModuleName);
     const title = document.getElementById("testSuiteName");
     if (title) {
-        title.innerText = `Test Case Results of ${selectedModule.module}`;
+        title.innerText = `Test Case Results of ${selectedModule.ModuleName}`;
     }
-    generateTable(selectedModule.tests || []);
+    generateTable(window.TestData || []);
     renderCards([selectedModule], { hideCards: ["totalTestModule"] }, true);
+}
+//MetaData
+function updateMetaData() {
+    const raw = localStorage.getItem("TestReportMetaData");
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    if (!data) return;
+    const tag = data.TagName ? `[${data.TagName}]` : "";
+    setText("jobDate", data.DateTime);
+    setText("jobDuration", data.JobDuration);
+    setText("jobNumber", data.JobNumber);
+    setText(
+        "metaTitle",
+        `${tag} ${data.ReleaseVersion}.${data.ReleaseNumber}`
+    );
+    setText(
+        "metaSubTitle",
+        `${data.isAdminTest || ""} | ${data.DBType || ""}`
+    );
+}
+//Environment Information
+function updateEnvironmentInformation(data = {}) {
+    setText("envMachine", data.Machine);
+    setText("envOS", data.OS);
+    setText("envFramework", data.Framework);
+    setText("envScreen", data.ScreenResolution);
+    setText("envBrowser", data.Browser);
 }
 //Filter Table 
 function filterTable(tableBodyId, colspan, includeStatus = false) {
@@ -87,7 +117,8 @@ function filterTable(tableBodyId, colspan, includeStatus = false) {
         if (row.classList.contains('no-results')) return;
 
         const text = row.textContent.toLowerCase();
-        const status = row.getAttribute('data-status') || '';
+        const status = row.getAttribute('data-status').toLowerCase() || '';
+
 
         const matchSearch = !searchVal || text.includes(searchVal);
         const matchStatus = statusVal === 'all' || status === statusVal;
@@ -100,56 +131,7 @@ function filterTable(tableBodyId, colspan, includeStatus = false) {
         }
     });
 
-    // 🔥 FIX: remove only inside this table
-    const existingEmpty = tbody.querySelector('.no-results');
-    if (existingEmpty) existingEmpty.remove();
-
-    // Empty state
-    if (visibleCount === 0) {
-        const emptyRow = document.createElement('tr');
-        emptyRow.className = 'no-results';
-        emptyRow.innerHTML = `
-      <td colspan="${colspan}">
-        No ${tableBodyId.includes('test') ? 'tests' : 'modules'} match your search.
-      </td>
-    `;
-        tbody.appendChild(emptyRow);
-    }
-}
-function filterTable(tableBodyId, colspan, includeStatus = false) {
-    const searchEl = document.getElementById('searchInput');
-    const statusEl = document.getElementById('statusFilter');
-
-    const searchVal = searchEl?.value.toLowerCase().trim() || "";
-    const statusVal = includeStatus && statusEl
-        ? statusEl.value.toLowerCase()
-        : "all";
-
-    const tbody = document.getElementById(tableBodyId);
-    if (!tbody) return;
-
-    const rows = tbody.querySelectorAll("tr");
-
-    let visibleCount = 0;
-
-    rows.forEach(row => {
-        if (row.classList.contains('no-results')) return;
-
-        const text = row.textContent.toLowerCase();
-        const status = row.getAttribute('data-status') || '';
-
-        const matchSearch = !searchVal || text.includes(searchVal);
-        const matchStatus = statusVal === 'all' || status === statusVal;
-
-        if (matchSearch && matchStatus) {
-            row.style.display = '';
-            visibleCount++;
-        } else {
-            row.style.display = 'none';
-        }
-    });
-
-    //remove only inside this table
+    // FIX: remove only inside this table
     const existingEmpty = tbody.querySelector('.no-results');
     if (existingEmpty) existingEmpty.remove();
 
@@ -220,12 +202,12 @@ function generateModuleTable(data, tableBodyId) {
         const row = document.createElement("tr");
         row.setAttribute("class", "data-row");
         row.innerHTML = `
-        <td><strong>${item.module}</strong></td>
-        <td>${formatDuration(item.excution_time)}</td>
-        <td>${item.total_script}</td>
-        <td style="color:#22c55e;">${item.total_success}</td>
-        <td style="color:#ef4444;">${item.total_fail}</td>
-        <td style="color:#f59e0b;">${item.non_verifying}</td>
+        <td><strong>${item.ModuleName}</strong></td>
+        <td>${formatDuration(item.ExecutionTime)}</td>
+        <td>${item.TotalScripts}</td>
+        <td style="color:#22c55e;">${item.TotalSucess}</td>
+        <td style="color:#ef4444;">${item.TotalFail}</td>
+        <td style="color:#f59e0b;">${item.TotalNon}</td>
         `;
         row.addEventListener("click", () => {
             localStorage.setItem("selectedModule", JSON.stringify(item));
@@ -247,11 +229,11 @@ function updateChartStatsdashboard(moduleData) {
 // Card System
 function calculateDashboardData(moduleData = []) {
     const totals = moduleData.reduce((acc, item) => {
-        acc.totalTests += item.total_script || 0;
-        acc.totalPassed += item.total_success || 0;
-        acc.totalFailed += item.total_fail || 0;
-        acc.totalNonVerifying += item.non_verifying || 0;
-        acc.totalTime += item.excution_time || 0;
+        acc.totalTests += item.TotalScripts || 0;
+        acc.totalPassed += item.TotalSucess || 0;
+        acc.totalFailed += item.TotalFail || 0;
+        acc.totalNonVerifying += item.TotalNon || 0;
+        acc.totalTime += item.ExecutionTime || 0;
         return acc;
     }, {
         totalTests: 0,
@@ -369,13 +351,18 @@ function getStatusUI(status = "") {
             icon: "fa-solid fa-triangle-exclamation non-icon",
             badge: "badge non",
             text: "Non-Verifying"
+        },
+        skipped: {
+            icon: "fa-solid fa-forward skip-icon",
+            badge: "badge skip",
+            text: "Skipped"
         }
     };
 
     return statusMap[key] || {
-        icon: "fa-circle-minus skip-icon",
-        badge: "badge skip",
-        text: "Skipped"
+        icon: "fa-solid fa-fire-flame-curved error-icon",
+        badge: "badge fail",
+        text: "Error"
     };
 }
 //Test Data Table
@@ -389,11 +376,11 @@ function generateTable(data = []) {
     const fragment = document.createDocumentFragment();
 
     data.forEach((test, index) => {
-        const ui = getStatusUI(test.status);
+        const ui = getStatusUI(test.Status);
 
         const row = document.createElement("tr");
         row.className = "data-row";
-        row.dataset.status = test.status;
+        row.dataset.status = test.Status;
         row.dataset.index = index;
 
         // --- Cells ---
@@ -401,11 +388,11 @@ function generateTable(data = []) {
         idCell.className = "cell-test-id";
         idCell.innerHTML = `
         <i class="fa-solid ${ui.icon}"></i>
-        <strong>${test.id || ""}</strong>
+        <strong>${test.Name || ""}</strong>
          `;
         const descCell = document.createElement("td");
         descCell.className = "cell-test-details";
-        descCell.innerText = test.desc || "";
+        descCell.innerText = test.Description || "";
 
         const statusCell = document.createElement("td");
         statusCell.className = "cell-test-status";
@@ -413,7 +400,7 @@ function generateTable(data = []) {
 
         const durationCell = document.createElement("td");
         durationCell.className = "cell-test-duration";
-        durationCell.innerText = formatDuration(test.duration || 0, true, false);
+        durationCell.innerText = formatDuration(test.Time || 0, true, false);
 
         row.appendChild(idCell);
         row.appendChild(descCell);
@@ -453,17 +440,17 @@ function generateTable(data = []) {
 function renderDetailContent(test, root) {
     if (!test || !root) return;
 
-    const steps = test.steps || [];
+    const steps = test.TestSteps || [];
 
     // --- Summary ---
-    setTextIn(root, "testDescrition", test.desc);
-    setTextIn(root, "testID", test.id);
+    setTextIn(root, "testDescrition", test.Description);
+    setTextIn(root, "testID", test.Name);
     setTextIn(root, "testTotalsteps", steps.length);
-    setTextIn(root, "testComment", test.comment);
-    setTextIn(root, "testBug", test.testBugRef);
-    setTextIn(root, "testDuration", formatDuration(test.duration || 0, true, false));
+    setTextIn(root, "testComment", test.Comment);
+    setTextIn(root, "testBug", test.BugRefId);
+    setTextIn(root, "testDuration", formatDuration(test.Time || 0, true, false));
 
-    const ui = getStatusUI(test.status);
+    const ui = getStatusUI(test.Status);
     setHTMLIn(root, "testStatus", `
     <span class="${ui.badge}">
       <i class="fa-solid ${ui.icon}"></i> ${ui.text}
@@ -481,26 +468,33 @@ function renderDetailContent(test, root) {
     container.innerHTML = "";
 
     const fragment = document.createDocumentFragment();
+    let myIndex = 0;
 
-    steps.forEach(step => {
+    steps.forEach((step, index) => {
         const div = document.createElement("div");
 
         let className = "step-item";
         let icon = "";
         let body = "";
-
-        const status = (step.status || "").toLowerCase();
+        if (step.StepReturn) {
+            body += `<div class="step-item-body">${getStepReturn(step.StepReturn)}</div>`;
+        }
+        if (step.StepFailedReturn) {
+            body += `<div class="step-item-body">Return Result : ${step.StepFailedReturn}</div>`;
+        }
+        if (test.Exception && step.StepType?.toLowerCase() === "fail") {
+            const error = test.Exception.replace(/\r\n|\n/g, "<br>");
+            body += `<div class="step-item-body error">${error}</div>`;
+        }
+        const status = (step.StepType || "").toLowerCase();
 
         if (status === "pass") {
             className += " step-pass";
             icon = `<i class="fa-solid fa-check step-icon"></i>`;
-            body = `<div class="step-item-body">Expected Result: ${step.expected || "Value Matched"}</div>`;
         }
         else if (status === "fail") {
             className += " step-fail";
             icon = `<i class="fa-solid fa-xmark step-icon"></i>`;
-            const error = (step.exception || "").replace(/\r\n|\n/g, "<br>");
-            body = `<div class="step-item-body error">${error}</div>`;
         }
         else if (status === "info") {
             className += " step-info";
@@ -508,18 +502,41 @@ function renderDetailContent(test, root) {
         }
 
         div.className = className;
-
+        div.style.setProperty("--delay", `${Math.min(index * 70, 1000)}ms`);
         div.innerHTML = `
-      <div class="step-item-title">
-        ${icon} ${step.text || ""}
-      </div>
-      ${body}
-    `;
-
+        <div class="step-item-title">${icon} ${step.StepName || ""} ${(step.StepParameter != null) ? ` &nbsp;&nbsp;{${formatStepData(step.StepParameter)}}` : ''}</div>
+        ${body}
+        `;
+        myIndex++;
         fragment.appendChild(div);
     });
-
     container.appendChild(fragment);
+    if (window.TestImage[test.Name] != null) {
+        const imgdiv = document.createElement("div");
+        imgdiv.innerHTML = `<img src="${window.TestImage[test.Name].imageFullPath}"/>`;
+        imgdiv.className = "step-img";
+        imgdiv.style.setProperty("--delay", `${Math.min(myIndex * 70, 1000)}ms`);
+        container.appendChild(imgdiv);
+    }
+
+}
+//Step Functions
+function getStepReturn(stepReturn = {}) {
+    const map = [
+        { key: "ExpectedResult", label: "Expected Result" },
+        { key: "Hashtag", label: "Hashtag" }
+    ];
+
+    for (const item of map) {
+        const value = stepReturn[item.key]?.trim();
+        if (stepReturn[item.key]!=null) return `${item.label} : ${value}`;
+    }
+    return "";
+}
+function formatStepData(stepData = {}) {
+    return Object.entries(stepData)
+        .map(([key, value]) => `${key} : ${value}`)
+        .join(", ");
 }
 //Test Steps 
 function openModal(test, rowElement) {
@@ -545,11 +562,11 @@ if (openFullBtn && fullModal) {
         const selectedModule = JSON.parse(localStorage.getItem("selectedModule"));
         if (!selectedModule) return;
 
-        currentTests = selectedModule.tests || [];
+        currentTests = window.TestData || [];
 
         // Title
         const modalTitle = document.getElementById("modalModuleName");
-        if (modalTitle) modalTitle.innerText = selectedModule.module;
+        if (modalTitle) modalTitle.innerText = selectedModule.ModuleName;
 
         // Left list
         generateModalLeftList(currentTests);
@@ -594,7 +611,7 @@ function generateModalLeftList(tests = []) {
     const fragment = document.createDocumentFragment();
 
     tests.forEach((test, index) => {
-        const ui = getStatusUI(test.status);
+        const ui = getStatusUI(test.Status);
 
         const item = document.createElement("div");
         item.className = "modal-test-item";
@@ -604,7 +621,7 @@ function generateModalLeftList(tests = []) {
         icon.className = `fa-solid ${ui.icon}`;
 
         const text = document.createElement("span");
-        text.innerText = test.id || "";
+        text.innerText = test.Name || "";
 
         item.appendChild(icon);
         item.appendChild(text);
@@ -664,7 +681,7 @@ function loadModalDetail(test, element) {
     container.innerHTML = "";
     container.appendChild(wrapper);
 }
-// ---------- CLOSE ----------
+//CLOSE
 function closeModal() {
     if (fullModal) fullModal.style.display = "none";
 }
@@ -726,12 +743,10 @@ function setText(id, value) {
     const el = document.getElementById(id);
     if (el) el.innerText = value || "";
 }
-
 function setHTML(id, value) {
     const el = document.getElementById(id);
     if (el) el.innerHTML = value || "";
 }
-
 function setDisplay(id, value) {
     const el = document.getElementById(id);
     if (el) el.style.display = value;
@@ -740,7 +755,6 @@ function setTextIn(root, id, value) {
     const el = root.querySelector(`#${id}`);
     if (el) el.innerText = value || "";
 }
-
 function setHTMLIn(root, id, value) {
     const el = root.querySelector(`#${id}`);
     if (el) el.innerHTML = value || "";

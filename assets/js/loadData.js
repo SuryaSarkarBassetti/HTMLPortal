@@ -1,3 +1,4 @@
+const mainURL="http://localhost:5165/api/TestData";
 async function loadModuleData() {
     try {
         const response = await fetch('data/moduleData.json');
@@ -17,7 +18,8 @@ async function loadModuleData() {
                 total_fail: 1,
                 non_verifying: 0,
                 tests: [
-                    { id: "TC_001", desc: "Login with valid credentials", status: "passed", duration: 28, comment: "Test data test full comment", steps: [
+                    {
+                        id: "TC_001", desc: "Login with valid credentials", status: "passed", duration: 28, comment: "Test data test full comment", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -39,8 +41,10 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ] },
-                    { id: "TC_002", desc: "Logout", status: "passed", duration: 19, comment: "Test data test full comment TC_002", steps: [
+                        ]
+                    },
+                    {
+                        id: "TC_002", desc: "Logout", status: "passed", duration: 19, comment: "Test data test full comment TC_002", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -62,8 +66,10 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ] },
-                    { id: "TC_003", desc: "Invalid password", status: "failed", duration: 31, comment: "Test data test full comment TC_002",  steps: [
+                        ]
+                    },
+                    {
+                        id: "TC_003", desc: "Invalid password", status: "failed", duration: 31, comment: "Test data test full comment TC_002", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -85,7 +91,8 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ] }
+                        ]
+                    }
                 ]
             },
             {
@@ -121,7 +128,8 @@ async function loadModuleData() {
 
                         ]
                     },
-                    { id: "TC_005", desc: "Check the scale and pagination when Full horizon is selected in Paging scale dropdown list for scale 1 day slots, grouped by week in the Gantt view window of Contacts/Tasks view", status: "failed", duration: 47, comment: "Test data test full comment TC_002", testBugRef: "24569",  steps: [
+                    {
+                        id: "TC_005", desc: "Check the scale and pagination when Full horizon is selected in Paging scale dropdown list for scale 1 day slots, grouped by week in the Gantt view window of Contacts/Tasks view", status: "failed", duration: 47, comment: "Test data test full comment TC_002", testBugRef: "24569", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -143,8 +151,10 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ]  },
-                    { id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "",  steps: [
+                        ]
+                    },
+                    {
+                        id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -166,8 +176,10 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ]  },
-                    { id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "",  steps: [
+                        ]
+                    },
+                    {
+                        id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -189,8 +201,10 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ]  },
-                    { id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "",  steps: [
+                        ]
+                    },
+                    {
+                        id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -212,8 +226,10 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ]  },
-                    { id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "",  steps: [
+                        ]
+                    },
+                    {
+                        id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -235,8 +251,10 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ]  },
-                    { id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "",  steps: [
+                        ]
+                    },
+                    {
+                        id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -258,8 +276,10 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ]  },
-                    { id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "",  steps: [
+                        ]
+                    },
+                    {
+                        id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -281,8 +301,10 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ]  },
-                    { id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "",  steps: [
+                        ]
+                    },
+                    {
+                        id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -304,8 +326,10 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ]  },
-                    { id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "",  steps: [
+                        ]
+                    },
+                    {
+                        id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -327,8 +351,10 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ]  },
-                    { id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "",  steps: [
+                        ]
+                    },
+                    {
+                        id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -350,8 +376,10 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ]  },
-                    { id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "",  steps: [
+                        ]
+                    },
+                    {
+                        id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -373,8 +401,10 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ]  },
-                    { id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "",  steps: [
+                        ]
+                    },
+                    {
+                        id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -396,8 +426,10 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ]  },
-                    { id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "",  steps: [
+                        ]
+                    },
+                    {
+                        id: "TC_003", desc: "Invalid password", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_003", testBugRef: "", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -419,8 +451,10 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ]  },
-                    { id: "TC_004", desc: "Invalid password 2", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_004", testBugRef: "",  steps: [
+                        ]
+                    },
+                    {
+                        id: "TC_004", desc: "Invalid password 2", status: "non_verifying", duration: 31, comment: "Test data test full comment TC_003", comment: "Test data test full comment TC_004", testBugRef: "", steps: [
                             { text: 'Check the ablity to open TxHourTracking module in window mode"', status: "pass" },
                             { text: 'Open Navigation Tree', status: "pass" },
                             { text: 'Login Using "Admin"', status: "pass" },
@@ -442,7 +476,8 @@ async function loadModuleData() {
                             { text: 'Open Navigation Tree', status: "info" },
                             { text: 'Login Using "Admin"', status: "fail" },
 
-                        ]  }
+                        ]
+                    }
                 ]
             },
             {
@@ -494,5 +529,37 @@ async function loadModuleData() {
                 ]
             }
         ];
+    }
+}
+
+async function loadDashboardData() {
+    try {
+        const response = await fetch(`${mainURL}/GetFullReport`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch module data');
+        }
+        const fullRawData = await response.json();
+        const { Module, ...metaData } = fullRawData.data.TestReport;
+        localStorage.setItem("TestReportMetaData", JSON.stringify(metaData));
+        window.TestReportModule = Module;
+        window.EnvironmentInformation = fullRawData.data.EnvironmentInformation;
+    } catch (error) {
+        console.error('Error loading module data API:', error);
+        loadModuleData();
+    }
+}
+
+async function loadTestModuleData(moduleName) {
+    try {
+        const response = await fetch(`${mainURL}/GetModuleData?moduleName=${moduleName}`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch module data');
+        }
+        const fullRawData = await response.json();
+        window.TestData = fullRawData.data.TestData;
+        window.TestImage = fullRawData.data.AllImages;
+    } catch (error) {
+        console.error('Error loading module data API:', error);
+        loadModuleData();
     }
 }

@@ -14,9 +14,9 @@ function getChartData(moduleData) {
   const dataItems = Array.isArray(moduleData) ? moduleData : [];
 
   dataItems.forEach(item => {
-    totalSuccess += item.total_success || 0;
-    totalFail += item.total_fail || 0;
-    totalScripts += item.total_script || 0;
+    totalSuccess += item.TotalSucess || 0;
+    totalFail += item.TotalFail || 0;
+    totalScripts += item.TotalScripts || 0;
   });
 
   // Remaining (not counted in above)
