@@ -1,0 +1,36 @@
+{
+  "ReleaseVersion": "7.0.2604",
+  "ReleaseNumber": "21056",
+  "TagName": "",
+  "isAdminTest": "Admin",
+  "DBType": "MSSQL2022",
+  "JobNumber": "10",
+  "JobDuration": "12h",
+  "DateTime": "May 2, 2026 03:40 PM",
+  "Module": [
+    {
+      "ModuleName": "AAA",
+      "ExecutionTime": 632,
+      "TotalScripts": 3,
+      "TotalSucess": 1,
+      "TotalFail": 2,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "AdWeb_Extractions",
+      "ExecutionTime": 271.088,
+      "TotalScripts": 56,
+      "TotalSucess": 35,
+      "TotalFail": 21,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "AdWeb_ObjectType",
+      "ExecutionTime": 163.633,
+      "TotalScripts": 27,
+      "TotalSucess": 23,
+      "TotalFail": 4,
+      "TotalNon": 0
+    }
+  ]
+}
