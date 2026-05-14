@@ -49,25 +49,165 @@ document.querySelector('.bottom .theme-switcher').addEventListener('click', () =
 });
 // Page Ele
 async function initDashBoardData() {
+
     await loadDashboardData();
+
+    // Save all modules for dropdown use
+    localStorage.setItem(
+        "TestReportModule",
+        JSON.stringify(window.TestReportModule || [])
+    );
+
     updateMetaData();
-    generateModuleTable(window.TestReportModule, "moduleTableBody");
-    renderCards(window.TestReportModule, { hideCards: ["totalNonVerifing"] });
+
+    generateModuleTable(
+        window.TestReportModule,
+        "moduleTableBody"
+    );
+
+    renderCards(
+        window.TestReportModule,
+        {
+            hideCards: ["totalNonVerifing"]
+        }
+    );
+
     updateChartStats(window.TestReportModule);
+
     updateChartStatsdashboard(window.TestReportModule);
-    updateEnvironmentInformation(window.EnvironmentInformation);
+
+    updateEnvironmentInformation(
+        window.EnvironmentInformation
+    );
 }
 async function initTestCasesData() {
-    const selectedModule = JSON.parse(localStorage.getItem("selectedModule"));
+
+    const selectedModule = JSON.parse(
+        localStorage.getItem("selectedModule")
+    );
+
     updateMetaData();
+
     if (!selectedModule) return;
+
+    // Load current module tests
     await loadTestModuleData(selectedModule.ModuleName);
+
+    // Get all modules
+    const modules = JSON.parse(
+        localStorage.getItem("TestReportModule")
+    ) || [];
+
     const title = document.getElementById("testSuiteName");
+
+    // Render title with dropdown
     if (title) {
-        title.innerText = `Test Case Results of ${selectedModule.ModuleName}`;
+
+        title.innerHTML = `
+       Test Case Results of
+
+         <div class="custom-dropdown" id="moduleDropdown">
+
+        <div class="custom-dropdown-selected" id="selectedModuleText">
+           [${selectedModule.ModuleName}
+            <i class="fa-solid fa-angle-down small-arrow"></i>]
+        </div>
+
+        <div class="custom-dropdown-menu" id="moduleDropdownMenu"></div>
+
+       </div>
+    `;
+
+        const dropdown = document.getElementById("moduleDropdown");
+        const menu = document.getElementById("moduleDropdownMenu");
+        const selectedText = document.getElementById("selectedModuleText");
+
+        // Open / Close
+        selectedText.addEventListener("click", () => {
+            dropdown.classList.toggle("open");
+        });
+
+        // Add items
+        modules.forEach(module => {
+
+            const item = document.createElement("div");
+
+            item.className = "custom-dropdown-item";
+
+            if (
+                module.ModuleName ===
+                selectedModule.ModuleName
+            ) {
+                item.classList.add("active");
+            }
+
+            item.innerText = module.ModuleName;
+
+            item.addEventListener("click", async () => {
+
+                selectedText.innerHTML = `
+            [${module.ModuleName}
+            <i class="fa-solid fa-angle-down small-arrow"></i>]
+        `;
+
+                dropdown.classList.remove("open");
+
+                localStorage.setItem(
+                    "selectedModule",
+                    JSON.stringify(module)
+                );
+
+                initTestCasesData();
+
+                renderCards(
+                    [module],
+                    {
+                        hideCards: ["totalTestModule"]
+                    }
+                );
+
+                setDisplay("emptyState", "block");
+                setDisplay("detailContent", "none");
+
+                document.querySelectorAll(".data-row")
+                    .forEach(row => {
+                        row.classList.remove("active");
+                    });
+
+                closeModal();
+
+                // Active item
+                document.querySelectorAll(".custom-dropdown-item")
+                    .forEach(el => {
+                        el.classList.remove("active");
+                    });
+
+                item.classList.add("active");
+            });
+
+            menu.appendChild(item);
+        });
+
+        // Outside click close
+        document.addEventListener("click", (e) => {
+
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove("open");
+            }
+        });
+
     }
+
+    // Initial table load
     generateTable(window.TestData || []);
-    renderCards([selectedModule], { hideCards: ["totalTestModule"] }, true);
+
+    // Initial cards load
+    renderCards(
+        [selectedModule],
+        {
+            hideCards: ["totalTestModule"]
+        }
+    );
 }
 //MetaData
 function updateMetaData() {
@@ -372,6 +512,8 @@ function generateTable(data = []) {
 
     tbody.innerHTML = "";
     tableData = data;
+    tbody.dataset.listenerAdded = "false"; // mark as added
+
 
     const fragment = document.createDocumentFragment();
 
@@ -410,14 +552,14 @@ function generateTable(data = []) {
         fragment.appendChild(row);
     });
     tbody.appendChild(fragment);
-    if (!tbody.dataset.listenerAdded) {
+
+    if (tbody.dataset.listenerAdded == "false") {
         tbody.addEventListener("click", (e) => {
             const row = e.target.closest(".data-row");
             if (!row) return;
 
             const index = row.dataset.index;
             const test = data[index];
-
             if (test) {
                 selectedTestIndex = Number(index); // sync index
                 openModal(test, row);
@@ -529,7 +671,7 @@ function getStepReturn(stepReturn = {}) {
 
     for (const item of map) {
         const value = stepReturn[item.key]?.trim();
-        if (stepReturn[item.key]!=null) return `${item.label} : ${value}`;
+        if (stepReturn[item.key] != null) return `${item.label} : ${value}`;
     }
     return "";
 }
@@ -759,3 +901,4 @@ function setHTMLIn(root, id, value) {
     const el = root.querySelector(`#${id}`);
     if (el) el.innerHTML = value || "";
 }
+
