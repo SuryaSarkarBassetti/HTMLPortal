@@ -140,3 +140,14 @@ td {
 .modal-test-item.active {
     background-color: rgba(15, 23, 42, 1);
 }
+.small-arrow{
+    color: rgba(255, 255, 255, 0.795);
+    transition: color 0.3s ease;
+}
+
+.custom-dropdown-menu {
+    background: rgb(20, 21, 23);
+    color: #e2e8f0;
+    box-shadow: rgba(108, 105, 105, 0.35) 0px 5px 15px;
+
+}

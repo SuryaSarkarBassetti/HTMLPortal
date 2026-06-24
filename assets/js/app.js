@@ -166,7 +166,7 @@ async function initTestCasesData() {
                     }
                 );
 
-                setDisplay("emptyState", "block");
+                setDisplay("emptyState", "flex");
                 setDisplay("detailContent", "none");
 
                 document.querySelectorAll(".data-row")

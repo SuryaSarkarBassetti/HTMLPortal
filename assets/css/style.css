@@ -1238,34 +1238,59 @@ td {
 }
 
 .custom-dropdown-selected {
-    min-width: 220px;
+    width: 120px;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.08);
     cursor: pointer;
     font-weight: 600;
     transition: 0.2s ease;
     font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
 }
 
 .custom-dropdown-selected:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: #b2b2b251
 }
+
 
 .custom-dropdown-menu {
     position: absolute;
     top: calc(100% + 8px);
-    left: -15px;
+    left: -3px;
     min-width: 100%;
-    background: white;
+    background: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 14px;
-    overflow: hidden;
+    overflow-y: auto;   /* Enable vertical scroll */
+    overflow-x: hidden; /* Hide horizontal scroll */
+    max-height: 250px;  /* Adjust as needed */
     visibility: hidden;
     transform: translateY(10px);
     transition: 0.2s ease;
     z-index: 9999;
+    color: black;
 }
+
+.custom-dropdown-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-dropdown-menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.custom-dropdown-menu::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.custom-dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 
 .custom-dropdown.open .custom-dropdown-menu {
     opacity: 1;
