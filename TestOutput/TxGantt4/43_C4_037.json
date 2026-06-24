@@ -1,0 +1,130 @@
+{
+  "Name": "43_C4_037",
+  "Description": "Check the unavailability of any creation form for parent entity and availability of a creation form for child entity in Contacts/Tasks view 4",
+  "Time": 181,
+  "Status": "Failed",
+  "BugRefId": "",
+  "Comment": "",
+  "Exception": "System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.\n ---\u003E OpenQA.Selenium.WebDriverTimeoutException: Timed out after 30 seconds\n   at OpenQA.Selenium.Support.UI.DefaultWait\u00601.ThrowTimeoutException(String exceptionMessage, Exception lastException)\n   at OpenQA.Selenium.Support.UI.DefaultWait\u00601.Until[TResult](Func\u00602 condition, CancellationToken token)\n   at OpenQA.Selenium.Support.UI.DefaultWait\u00601.Until[TResult](Func\u00602 condition)\n   at TxSelenium.TxWebDriver.WaitForElement(By by, WERefreshed parent, By frameBy) in /src/TxSelenium/TxWebDriver.cs:line 472\n   at TxSelenium.NativeTests.WebElements.WESTree.GetEntity(ICollection\u00601 path) in /src/TxSelenium/NativeTests/WebElements/Specific/WESTree.cs:line 103\n   at TxSelenium.NativeTests.WebElements.WESTree.SelectEntity(DTEntityNode nodes) in /src/TxSelenium/NativeTests/WebElements/Specific/WESTree.cs:line 131\n   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span\u00601 copyOfArgs, BindingFlags invokeAttr)\n   --- End of inner exception stack trace ---\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span\u00601 copyOfArgs, BindingFlags invokeAttr)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)\n   at XmlExecutor.ActionsExecutor.ExecuteCall(Object instance, TxNode\u00601 callingTree, MethodSignature signature) in /src/XmlExecutor/ActionsExecutor.cs:line 105",
+  "HashTag": {
+    "#NoSpace#": "",
+    "#CurrentMonth#": "6",
+    "#Space#": "",
+    "#M#": "6",
+    "#YY#": "26",
+    "#HH#": "17",
+    "#D#": "23",
+    "#DD#": "23",
+    "#MM#": "06",
+    "#YYYY#": "2026",
+    "#Month#": "June",
+    "#CurrentDate#": "23/06/2026",
+    "#YesterdayDate#": "22/06/2026",
+    "#DocPath#": "/src/pictures/",
+    "#CurrentDateAndTime#": "23/06/2026 00:00:00",
+    "#DownloadDirectory#": "/home/seluser/Downloads/",
+    "#IndexOT#": "Country"
+  },
+  "TestSteps": [
+    {
+      "StepName": "TestHeader",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "TxInterface",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Login",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "login": "responsable",
+        "password": "aaaaa"
+      }
+    },
+    {
+      "StepName": "MainWindow",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "NavigationTree",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectOT",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadAllListItem",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ElementAtFromLast",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": {
+        "Hashtag": "#IndexOT#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "4"
+      }
+    },
+    {
+      "StepName": "SelectV2",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "value": "#IndexOT#",
+        "clickArrow": "False"
+      }
+    },
+    {
+      "StepName": "EntityTree",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectEntity",
+      "StepType": "fail",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "t\u00E2ches"
+      }
+    }
+  ]
+}

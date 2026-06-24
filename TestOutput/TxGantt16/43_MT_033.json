@@ -1,0 +1,414 @@
+{
+  "Name": "43_MT_033",
+  "Description": "Check the functionality of the \u0022View Details\u0022 option of Machines in the Gantt view window of Machines/Tasks view",
+  "Time": 86,
+  "Status": "Passed",
+  "BugRefId": "",
+  "Comment": "",
+  "Exception": null,
+  "HashTag": {
+    "#NoSpace#": "",
+    "#CurrentMonth#": "6",
+    "#Space#": "",
+    "#M#": "6",
+    "#YY#": "26",
+    "#HH#": "19",
+    "#D#": "23",
+    "#DD#": "23",
+    "#MM#": "06",
+    "#YYYY#": "2026",
+    "#Month#": "June",
+    "#CurrentDate#": "23/06/2026",
+    "#YesterdayDate#": "22/06/2026",
+    "#DocPath#": "/src/pictures/",
+    "#CurrentDateAndTime#": "23/06/2026 00:00:00",
+    "#DownloadDirectory#": "/home/seluser/Downloads/"
+  },
+  "TestSteps": [
+    {
+      "StepName": "TestHeader",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "TxInterface",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Login",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "login": "responsable",
+        "password": "aaaaa"
+      }
+    },
+    {
+      "StepName": "MainWindow",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ClickOnButton",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Gantt"
+      }
+    },
+    {
+      "StepName": "ClickOnTileButton",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Machines/Tasks view"
+      }
+    },
+    {
+      "StepName": "ReturnGanttInNewTab",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Content",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnGanttView",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnTaskTreeView",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "RightClickOnItem",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "name": "[To be planned]"
+      }
+    },
+    {
+      "StepName": "ReadAllOptions",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "View details"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "Fully open/close branch"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "1"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "Sort this level by"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "2"
+      }
+    },
+    {
+      "StepName": "ClickOption",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "option": "View details"
+      }
+    },
+    {
+      "StepName": "ManageNotification",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadNotifictionText",
+      "StepType": "pass",
+      "StepSpaceNumber": 6,
+      "StepReturn": {
+        "ExpectedResult": "The clicked Object has been focused in the main tab."
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "notificationIndex": "1"
+      }
+    },
+    {
+      "StepName": "Changetab",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "indexTab": "0"
+      }
+    },
+    {
+      "StepName": "ReadBanner",
+      "StepType": "pass",
+      "StepSpaceNumber": 3,
+      "StepReturn": {
+        "ExpectedResult": "[To be planned]"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadForm",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "AttributeIsDiplayed",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "135"
+      }
+    },
+    {
+      "StepName": "AttributeIsDiplayed",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "134"
+      }
+    },
+    {
+      "StepName": "AttributeIsDiplayed",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "179"
+      }
+    },
+    {
+      "StepName": "AttributeIsDiplayed",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "141"
+      }
+    },
+    {
+      "StepName": "AttributeIsDiplayed",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "139"
+      }
+    },
+    {
+      "StepName": "AttributeName",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": "Name"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "135"
+      }
+    },
+    {
+      "StepName": "AttributeName",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": "Zone"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "134"
+      }
+    },
+    {
+      "StepName": "AttributeName",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": "Tasks used for"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "179"
+      }
+    },
+    {
+      "StepName": "AttributeName",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": "Capacity in %"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "141"
+      }
+    },
+    {
+      "StepName": "AttributeName",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": "Capacity"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "139"
+      }
+    },
+    {
+      "StepName": "Read",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": "[To be planned]"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "135"
+      }
+    },
+    {
+      "StepName": "ReadListLink",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "134"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "GetText",
+      "StepType": "pass",
+      "StepSpaceNumber": 6,
+      "StepReturn": {
+        "ExpectedResult": "Zone001"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Read",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": ""
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "141"
+      }
+    },
+    {
+      "StepName": "Read",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": "Min : 25"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "139"
+      }
+    }
+  ]
+}

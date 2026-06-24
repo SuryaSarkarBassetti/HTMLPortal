@@ -1,0 +1,643 @@
+{
+  "Name": "43_MCS_007",
+  "Description": "Check the availability of Link type attribute \u0022Project\u0022 in \u0022Multicriteria Selection - Requirement Set\u0022 window for all Gantt view",
+  "Time": 129,
+  "Status": "Failed",
+  "BugRefId": "",
+  "Comment": "",
+  "Exception": "System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.\n ---\u003E OpenQA.Selenium.WebDriverTimeoutException: Timed out after 30 seconds\n   at OpenQA.Selenium.Support.UI.DefaultWait\u00601.ThrowTimeoutException(String exceptionMessage, Exception lastException)\n   at OpenQA.Selenium.Support.UI.DefaultWait\u00601.Until[TResult](Func\u00602 condition, CancellationToken token)\n   at OpenQA.Selenium.Support.UI.DefaultWait\u00601.Until[TResult](Func\u00602 condition)\n   at TxSelenium.NativeTests.WebElements.WESPopUp.ReadPopUpMessage() in /src/TxSelenium/NativeTests/WebElements/Specific/WESPopUp.cs:line 128\n   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)\n   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)\n   --- End of inner exception stack trace ---\n   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)\n   at XmlExecutor.ActionsExecutor.ExecuteCall(Object instance, TxNode\u00601 callingTree, MethodSignature signature) in /src/XmlExecutor/ActionsExecutor.cs:line 105",
+  "HashTag": {
+    "#NoSpace#": "",
+    "#CurrentMonth#": "6",
+    "#Space#": "",
+    "#M#": "6",
+    "#YY#": "26",
+    "#HH#": "18",
+    "#D#": "23",
+    "#DD#": "23",
+    "#MM#": "06",
+    "#YYYY#": "2026",
+    "#Month#": "June",
+    "#CurrentDate#": "23/06/2026",
+    "#YesterdayDate#": "22/06/2026",
+    "#DocPath#": "/src/pictures/",
+    "#CurrentDateAndTime#": "23/06/2026 00:00:00",
+    "#DownloadDirectory#": "/home/seluser/Downloads/"
+  },
+  "TestSteps": [
+    {
+      "StepName": "TestHeader",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "TxInterface",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Login",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "login": "responsable",
+        "password": "aaaaa"
+      }
+    },
+    {
+      "StepName": "MainWindow",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ClickOnButton",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Gantt"
+      }
+    },
+    {
+      "StepName": "ReadHeader",
+      "StepType": "pass",
+      "StepSpaceNumber": 3,
+      "StepReturn": {
+        "ExpectedResult": "Gantt Management"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ClickOnTileButton",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Projects/Tasks view"
+      }
+    },
+    {
+      "StepName": "ReturnGanttInNewTab",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Changetab",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "indexTab": "1"
+      }
+    },
+    {
+      "StepName": "Content",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnToolbar",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadGanttViewName",
+      "StepType": "pass",
+      "StepSpaceNumber": 6,
+      "StepReturn": {
+        "ExpectedResult": "Projects/Tasks view"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "MoreAction",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectItem",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "item": "Toggle filters panel"
+      }
+    },
+    {
+      "StepName": "ReturnAdvancedSearch",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ChangeTab",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "tabName": "Tasks"
+      }
+    },
+    {
+      "StepName": "ShowMoreFilterOptions",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnMulticriterionSelectionWindow",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadHeader",
+      "StepType": "pass",
+      "StepSpaceNumber": 6,
+      "StepReturn": {
+        "ExpectedResult": "Multicriterion Selection - Requirement Set"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Content",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Settings",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectEntity",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "Tasks"
+      }
+    },
+    {
+      "StepName": "SelectEntitybyParent",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "parents": "",
+        "collection": "Tasks",
+        "entity": "Project"
+      }
+    },
+    {
+      "StepName": "Criteria",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "PreselectionType",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "optionName": "A\u00A0part\u00A0of\u00A0the\u00A0Objects"
+      }
+    },
+    {
+      "StepName": "IsButtonPresentByTitle",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "View the checked Objects"
+      }
+    },
+    {
+      "StepName": "IsButtonPresentByTitle",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Check all Objects"
+      }
+    },
+    {
+      "StepName": "IsButtonPresentByTitle",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Uncheck all Objects"
+      }
+    },
+    {
+      "StepName": "IsButtonPresentByTitle",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Import a preselection from a text or Excel file..."
+      }
+    },
+    {
+      "StepName": "IsButtonPresentByTitle",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Launch a multicriteria selection"
+      }
+    },
+    {
+      "StepName": "SelectEntityBox",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "Projet-A-001"
+      }
+    },
+    {
+      "StepName": "Tick",
+      "StepType": "info",
+      "StepSpaceNumber": 10,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectEntityBox",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "Projet-AG-085"
+      }
+    },
+    {
+      "StepName": "Tick",
+      "StepType": "info",
+      "StepSpaceNumber": 10,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ViewCheckedObjects",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadAllEntity",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "pass",
+      "StepSpaceNumber": 10,
+      "StepReturn": {
+        "ExpectedResult": "Projet-A-001"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "pass",
+      "StepSpaceNumber": 10,
+      "StepReturn": {
+        "ExpectedResult": "Projet-AG-085"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "1"
+      }
+    },
+    {
+      "StepName": "IsTaskSelected",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "taskName": "Projet-A-001"
+      }
+    },
+    {
+      "StepName": "IsTaskSelected",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "taskName": "Projet-AG-085"
+      }
+    },
+    {
+      "StepName": "DisplayTheEntireTree",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadAllEntity",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "pass",
+      "StepSpaceNumber": 10,
+      "StepReturn": {
+        "ExpectedResult": "Projet-A-001"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "pass",
+      "StepSpaceNumber": 10,
+      "StepReturn": {
+        "ExpectedResult": "Projet-CT-132"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "1"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "pass",
+      "StepSpaceNumber": 10,
+      "StepReturn": {
+        "ExpectedResult": "Projet-B-003"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "2"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "pass",
+      "StepSpaceNumber": 10,
+      "StepReturn": {
+        "ExpectedResult": "Projet-AG-085"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "3"
+      }
+    },
+    {
+      "StepName": "SelectAll",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "IsTaskSelected",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "taskName": "Projet-A-001"
+      }
+    },
+    {
+      "StepName": "IsTaskSelected",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "taskName": "Projet-CT-132"
+      }
+    },
+    {
+      "StepName": "IsTaskSelected",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "taskName": "Projet-B-003"
+      }
+    },
+    {
+      "StepName": "IsTaskSelected",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "taskName": "Projet-AG-085"
+      }
+    },
+    {
+      "StepName": "IsTaskSelected",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "taskName": "Project-Rail-002"
+      }
+    },
+    {
+      "StepName": "UncheckAll",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "IsTaskSelected",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "False"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "taskName": "Projet-A-001"
+      }
+    },
+    {
+      "StepName": "IsTaskSelected",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "False"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "taskName": "Projet-CT-132"
+      }
+    },
+    {
+      "StepName": "IsTaskSelected",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "False"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "taskName": "Projet-B-003"
+      }
+    },
+    {
+      "StepName": "IsTaskSelected",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "False"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "taskName": "Projet-AG-085"
+      }
+    },
+    {
+      "StepName": "IsTaskSelected",
+      "StepType": "pass",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "ExpectedResult": "False"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "taskName": "Project-Rail-002"
+      }
+    },
+    {
+      "StepName": "Search",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "research": "a",
+        "popup": "False"
+      }
+    },
+    {
+      "StepName": "ManagePopUp",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadPopUpMessage",
+      "StepType": "fail",
+      "StepSpaceNumber": 10,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    }
+  ]
+}

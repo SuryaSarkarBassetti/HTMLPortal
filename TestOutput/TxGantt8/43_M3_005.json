@@ -1,0 +1,354 @@
+{
+  "Name": "43_M3_005",
+  "Description": "Check the functionaility of the \u0027Check all objects\u0027 button for Multiressources view 3 ",
+  "Time": 93,
+  "Status": "Passed",
+  "BugRefId": "",
+  "Comment": "",
+  "Exception": null,
+  "HashTag": {
+    "#NoSpace#": "",
+    "#CurrentMonth#": "6",
+    "#Space#": "",
+    "#M#": "6",
+    "#YY#": "26",
+    "#HH#": "17",
+    "#D#": "23",
+    "#DD#": "23",
+    "#MM#": "06",
+    "#YYYY#": "2026",
+    "#Month#": "June",
+    "#CurrentDate#": "23/06/2026",
+    "#YesterdayDate#": "22/06/2026",
+    "#DocPath#": "/src/pictures/",
+    "#CurrentDateAndTime#": "23/06/2026 00:00:00",
+    "#DownloadDirectory#": "/home/seluser/Downloads/"
+  },
+  "TestSteps": [
+    {
+      "StepName": "TestHeader",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "TxInterface",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Login",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "login": "responsable",
+        "password": "aaaaa"
+      }
+    },
+    {
+      "StepName": "MainWindow",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ClickOnButton",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Gantt"
+      }
+    },
+    {
+      "StepName": "ClickOnTileButton",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Multiressources view 3"
+      }
+    },
+    {
+      "StepName": "Sleep",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "timeOut": "3"
+      }
+    },
+    {
+      "StepName": "ReturnGanttInNewTab",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Changetab",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "indexTab": "1"
+      }
+    },
+    {
+      "StepName": "Content",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ManageSelectionWindow",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "IsButtonDisabled",
+      "StepType": "pass",
+      "StepSpaceNumber": 6,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Ok"
+      }
+    },
+    {
+      "StepName": "Content",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectEntityBox",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "Projet-A-001"
+      }
+    },
+    {
+      "StepName": "Read",
+      "StepType": "pass",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "ExpectedResult": "False"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectEntityBox",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "Projet-CT-132"
+      }
+    },
+    {
+      "StepName": "Read",
+      "StepType": "pass",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "ExpectedResult": "False"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectEntityBox",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "Projet-B-003"
+      }
+    },
+    {
+      "StepName": "Read",
+      "StepType": "pass",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "ExpectedResult": "False"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadAllEntity",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "ParrentObject": "Projet-A-001"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "pass",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "ExpectedResult": "Projet-A-001"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "ReadAllEntity",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "ParrentObject": "Projet-CT-132"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "pass",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "ExpectedResult": "Projet-CT-132"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "ReadAllEntity",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "ParrentObject": "Projet-B-003"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "pass",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "ExpectedResult": "Projet-B-003"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "SelectAll",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectEntityBox",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "Projet-A-001"
+      }
+    },
+    {
+      "StepName": "Read",
+      "StepType": "pass",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectEntityBox",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "Projet-CT-132"
+      }
+    },
+    {
+      "StepName": "Read",
+      "StepType": "pass",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectEntityBox",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "Projet-B-003"
+      }
+    },
+    {
+      "StepName": "Read",
+      "StepType": "pass",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "IsButtonDisabled",
+      "StepType": "pass",
+      "StepSpaceNumber": 6,
+      "StepReturn": {
+        "ExpectedResult": "False"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Ok"
+      }
+    }
+  ]
+}

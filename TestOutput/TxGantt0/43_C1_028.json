@@ -1,0 +1,1082 @@
+{
+  "Name": "43_C1_028",
+  "Description": "Check the functionality of Modify the progression  of the Task  in the Gantt view of Contacts/Tasks view ",
+  "Time": 159,
+  "Status": "Failed",
+  "BugRefId": "",
+  "Comment": "",
+  "Exception": "System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.\n ---\u003E OpenQA.Selenium.WebDriverTimeoutException: Timed out after 30 seconds\n   at OpenQA.Selenium.Support.UI.DefaultWait\u00601.ThrowTimeoutException(String exceptionMessage, Exception lastException)\n   at OpenQA.Selenium.Support.UI.DefaultWait\u00601.Until[TResult](Func\u00602 condition, CancellationToken token)\n   at OpenQA.Selenium.Support.UI.DefaultWait\u00601.Until[TResult](Func\u00602 condition)\n   at TxSelenium.TxWebDriver.ClickAt(IWebElement element) in /src/TxSelenium/TxWebDriver.cs:line 114\n   at TxSelenium.GenericTests.TxGantt.TxGanttResourceView.ExpandItem(String name) in /src/TxSelenium/GenericTests/TxGantt/TxGanttResourceView.cs:line 138\n   at InvokeStub_TxGanttResourceView.ExpandItem(Object, Span\u00601)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)\n   --- End of inner exception stack trace ---\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)\n   at XmlExecutor.ActionsExecutor.ExecuteCall(Object instance, TxNode\u00601 callingTree, MethodSignature signature) in /src/XmlExecutor/ActionsExecutor.cs:line 105",
+  "HashTag": {
+    "#NoSpace#": "",
+    "#CurrentMonth#": "6",
+    "#Space#": "",
+    "#M#": "6",
+    "#YY#": "26",
+    "#HH#": "16",
+    "#D#": "23",
+    "#DD#": "23",
+    "#MM#": "06",
+    "#YYYY#": "2026",
+    "#Month#": "June",
+    "#CurrentDate#": "23/06/2026",
+    "#YesterdayDate#": "22/06/2026",
+    "#DocPath#": "/src/pictures/",
+    "#CurrentDateAndTime#": "23/06/2026 00:00:00",
+    "#DownloadDirectory#": "/home/seluser/Downloads/",
+    "#IndexOT#": "Indice",
+    "#TaskNO#": "915",
+    "#daysAfter1Date#": "24",
+    "#MonthAfter1Date#": "Jun",
+    "#daysAfter3Date#": "26",
+    "#MonthAfter3Date#": "Jun",
+    "#StartDate#": "Wed. 24, 18:07",
+    "#Enddate#": "Fri. 26, 18:00",
+    "#Daystart#": "Wed. 24,",
+    "#DayEnd#": "Fri. 26,"
+  },
+  "TestSteps": [
+    {
+      "StepName": "TestHeader",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "TxInterface",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Login",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "login": "responsable",
+        "password": "aaaaa"
+      }
+    },
+    {
+      "StepName": "MainWindow",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "NavigationTree",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectOT",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadAllListItem",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ElementAtFromLast",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": {
+        "Hashtag": "#IndexOT#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "5"
+      }
+    },
+    {
+      "StepName": "SelectV2",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "value": "#IndexOT#",
+        "clickArrow": "False"
+      }
+    },
+    {
+      "StepName": "EntityTree",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectEntity",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "t\u00E2ches"
+      }
+    },
+    {
+      "StepName": "ReadForm",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Read",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "Hashtag": "#TaskNO#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "183"
+      }
+    },
+    {
+      "StepName": "NavigationTree",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectOT",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Select",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "value": "Portal"
+      }
+    },
+    {
+      "StepName": "ClickOnButton",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Gantt"
+      }
+    },
+    {
+      "StepName": "ClickOnTileButton",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Contacts/Tasks view"
+      }
+    },
+    {
+      "StepName": "ReturnGanttInNewTab",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Content",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnToolbar",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Scale",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ClickArrow",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectItem",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "item": "1 day slots, grouped by week"
+      }
+    },
+    {
+      "StepName": "PagingScale",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ClickArrow",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectItem",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "item": "View 1 week"
+      }
+    },
+    {
+      "StepName": "Today",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnGanttView",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnTaskTreeView",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectItem",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "name": "Lola Johnson"
+      }
+    },
+    {
+      "StepName": "ReturnToolbar",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "AddTaskLinked",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ManagePopUp",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadPopUpMessage",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "pass",
+      "StepSpaceNumber": 7,
+      "StepReturn": {
+        "ExpectedResult": "There may be data to be saved. Would you like to save it before launching this Model application? NB: if you don\u0027t, you may lose said data."
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "CloseConfirmationPopup",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "result": "True"
+      }
+    },
+    {
+      "StepName": "ReturnGanttView",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnTaskWindow",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadHeader",
+      "StepType": "pass",
+      "StepSpaceNumber": 7,
+      "StepReturn": {
+        "ExpectedResult": "Tasks - Object form"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Content",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ManageCommonMethods",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "GetNextDate",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#daysAfter1Date#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "days": "1",
+        "format": "d"
+      }
+    },
+    {
+      "StepName": "GetNextDate",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#MonthAfter1Date#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "days": "1",
+        "format": "MMM"
+      }
+    },
+    {
+      "StepName": "GetNextDate",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#daysAfter3Date#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "days": "3",
+        "format": "d"
+      }
+    },
+    {
+      "StepName": "GetNextDate",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#MonthAfter3Date#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "days": "3",
+        "format": "MMM"
+      }
+    },
+    {
+      "StepName": "Write",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "id": "151",
+        "value": "AddLinkTaskSUB"
+      }
+    },
+    {
+      "StepName": "GetLink",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "150"
+      }
+    },
+    {
+      "StepName": "SelectEntityBox",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "Projet-A-001"
+      }
+    },
+    {
+      "StepName": "Tick",
+      "StepType": "info",
+      "StepSpaceNumber": 10,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "GetLink",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "185"
+      }
+    },
+    {
+      "StepName": "SelectEntityBox",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "Zone001"
+      }
+    },
+    {
+      "StepName": "Tick",
+      "StepType": "info",
+      "StepSpaceNumber": 10,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "GetLink",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "188"
+      }
+    },
+    {
+      "StepName": "SelectEntityBox",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "Corrective maintenance"
+      }
+    },
+    {
+      "StepName": "Tick",
+      "StepType": "info",
+      "StepSpaceNumber": 10,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Date",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "153"
+      }
+    },
+    {
+      "StepName": "Month",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "month": "#MonthAfter3Date#"
+      }
+    },
+    {
+      "StepName": "Day",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "day": "#daysAfter3Date#"
+      }
+    },
+    {
+      "StepName": "Date",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "156"
+      }
+    },
+    {
+      "StepName": "Month",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "month": "#MonthAfter1Date#"
+      }
+    },
+    {
+      "StepName": "Day",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "day": "#daysAfter1Date#"
+      }
+    },
+    {
+      "StepName": "Date",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "155"
+      }
+    },
+    {
+      "StepName": "Month",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "month": "#MonthAfter3Date#"
+      }
+    },
+    {
+      "StepName": "Day",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "day": "#daysAfter3Date#"
+      }
+    },
+    {
+      "StepName": "Ok",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "validate": "True"
+      }
+    },
+    {
+      "StepName": "ReturnTaskTreeView",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ExpandItem",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "name": "Lola Johnson"
+      }
+    },
+    {
+      "StepName": "SelectItem",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "name": "Task_00#TaskNO#"
+      }
+    },
+    {
+      "StepName": "ReturnTaskGanttView",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadStartDate",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": {
+        "Hashtag": "#StartDate#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "taskName": "Task_00#TaskNO#"
+      }
+    },
+    {
+      "StepName": "ReadEndDate",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": {
+        "Hashtag": "#Enddate#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "taskName": "Task_00#TaskNO#"
+      }
+    },
+    {
+      "StepName": "ManageCommonMethods",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "GetNextDate",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "Hashtag": "#Daystart#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "days": "1",
+        "format": "ddd. d,"
+      }
+    },
+    {
+      "StepName": "GetNextDate",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "Hashtag": "#DayEnd#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "days": "3",
+        "format": "ddd. d,"
+      }
+    },
+    {
+      "StepName": "CheckValueContains",
+      "StepType": "pass",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "fullText": "#StartDate#",
+        "containsValue": "#Daystart#"
+      }
+    },
+    {
+      "StepName": "CheckValueContains",
+      "StepType": "pass",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "fullText": "#Enddate#",
+        "containsValue": "#DayEnd#"
+      }
+    },
+    {
+      "StepName": "ReturnToolbar",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Save",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Refresh",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnGanttView",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnTaskTreeView",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "RightClickOnItem",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "name": "Task_00#TaskNO#"
+      }
+    },
+    {
+      "StepName": "ClickOption",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "option": "View details"
+      }
+    },
+    {
+      "StepName": "Close",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Changetab",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "indexTab": "0"
+      }
+    },
+    {
+      "StepName": "ReadBanner",
+      "StepType": "pass",
+      "StepSpaceNumber": 3,
+      "StepReturn": {
+        "ExpectedResult": "Task_00#TaskNO#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadForm",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "IsTabPresent",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "tabName": "Descriptive"
+      }
+    },
+    {
+      "StepName": "AttributeName",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": "Progress"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "169"
+      }
+    },
+    {
+      "StepName": "Read",
+      "StepType": "pass",
+      "StepSpaceNumber": 4,
+      "StepReturn": {
+        "ExpectedResult": "Min : 0"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "169"
+      }
+    },
+    {
+      "StepName": "NavigationTree",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectOT",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Select",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "value": "Portal"
+      }
+    },
+    {
+      "StepName": "ClickOnButton",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Gantt"
+      }
+    },
+    {
+      "StepName": "ClickOnTileButton",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Contacts/Tasks view"
+      }
+    },
+    {
+      "StepName": "ReturnGanttInNewTab",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Content",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ClearAllNotifications",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnToolbar",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Scale",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ClickArrow",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectItem",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "item": "1 hour slots, grouped by day"
+      }
+    },
+    {
+      "StepName": "PagingScale",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ClickArrow",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectItem",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "item": "View 1 week"
+      }
+    },
+    {
+      "StepName": "ReturnToolbar",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Today",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnGanttView",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnTaskTreeView",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ExpandItem",
+      "StepType": "fail",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "name": "Lola Johnson"
+      }
+    }
+  ]
+}

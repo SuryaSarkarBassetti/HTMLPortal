@@ -466,7 +466,7 @@ thead {
 }
 
 .cell-test-id {
-    min-width: 75px;
+    min-width: 115px;
 }
 
 .cell-test-status {
@@ -821,7 +821,7 @@ td {
     gap: 20px;
     padding-top: 0.8rem;
     height: calc(100vh - 266px);
-    /* adjust based on header/cards */
+    overflow: hidden;
 }
 
 /* Left Table */

@@ -1,0 +1,312 @@
+{
+  "Name": "43_M4_094",
+  "Description": "Check the availability of a new table \u0022Qualifications table\u0022 in the previously modified task type for Multiressources view 4",
+  "Time": 76,
+  "Status": "Passed",
+  "BugRefId": "",
+  "Comment": "Dependent On : 43_M4_090 to 43_M4_093\n",
+  "Exception": null,
+  "HashTag": {
+    "#NoSpace#": "",
+    "#CurrentMonth#": "6",
+    "#Space#": "",
+    "#M#": "6",
+    "#YY#": "26",
+    "#HH#": "18",
+    "#D#": "23",
+    "#DD#": "23",
+    "#MM#": "06",
+    "#YYYY#": "2026",
+    "#Month#": "June",
+    "#CurrentDate#": "23/06/2026",
+    "#YesterdayDate#": "22/06/2026",
+    "#DocPath#": "/src/pictures/",
+    "#CurrentDateAndTime#": "23/06/2026 00:00:00",
+    "#DownloadDirectory#": "/home/seluser/Downloads/"
+  },
+  "TestSteps": [
+    {
+      "StepName": "TestHeader",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "TxInterface",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Login",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "login": "responsable",
+        "password": "aaaaa"
+      }
+    },
+    {
+      "StepName": "MainWindow",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "NavigationTree",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectOT",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Select",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "value": "Task\u00A0type"
+      }
+    },
+    {
+      "StepName": "EntityTree",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectEntity",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "Mechanical"
+      }
+    },
+    {
+      "StepName": "Sleep",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "timeOut": "3"
+      }
+    },
+    {
+      "StepName": "ReadBanner",
+      "StepType": "pass",
+      "StepSpaceNumber": 3,
+      "StepReturn": {
+        "ExpectedResult": "Mechanical"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadForm",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Read",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "227"
+      }
+    },
+    {
+      "StepName": "GetValue",
+      "StepType": "pass",
+      "StepSpaceNumber": 5,
+      "StepReturn": {
+        "ExpectedResult": "Qualified person"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "rowIndex": "1",
+        "colIndex": "1"
+      }
+    },
+    {
+      "StepName": "GetValue",
+      "StepType": "pass",
+      "StepSpaceNumber": 5,
+      "StepReturn": {
+        "ExpectedResult": "Luc Bariol"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "rowIndex": "1",
+        "colIndex": "3"
+      }
+    },
+    {
+      "StepName": "GetValue",
+      "StepType": "pass",
+      "StepSpaceNumber": 5,
+      "StepReturn": {
+        "ExpectedResult": "Machine004"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "rowIndex": "1",
+        "colIndex": "4"
+      }
+    },
+    {
+      "StepName": "GetValue",
+      "StepType": "pass",
+      "StepSpaceNumber": 5,
+      "StepReturn": {
+        "ExpectedResult": "Machine005"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "rowIndex": "1",
+        "colIndex": "5"
+      }
+    },
+    {
+      "StepName": "GetValue",
+      "StepType": "pass",
+      "StepSpaceNumber": 5,
+      "StepReturn": {
+        "ExpectedResult": "Machine006"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "rowIndex": "1",
+        "colIndex": "6"
+      }
+    },
+    {
+      "StepName": "GetValue",
+      "StepType": "pass",
+      "StepSpaceNumber": 5,
+      "StepReturn": {
+        "ExpectedResult": "Martin Pierre"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "rowIndex": "1",
+        "colIndex": "7"
+      }
+    },
+    {
+      "StepName": "Read",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "226"
+      }
+    },
+    {
+      "StepName": "GetText",
+      "StepType": "pass",
+      "StepSpaceNumber": 5,
+      "StepReturn": {
+        "ExpectedResult": "Martin Pierre"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadListLink",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "attrId": "225"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "GetText",
+      "StepType": "pass",
+      "StepSpaceNumber": 6,
+      "StepReturn": {
+        "ExpectedResult": "Machine004"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "1"
+      }
+    },
+    {
+      "StepName": "GetText",
+      "StepType": "pass",
+      "StepSpaceNumber": 6,
+      "StepReturn": {
+        "ExpectedResult": "Machine005"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "LastElement",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "GetText",
+      "StepType": "pass",
+      "StepSpaceNumber": 6,
+      "StepReturn": {
+        "ExpectedResult": "Machine006"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    }
+  ]
+}

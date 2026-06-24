@@ -1,0 +1,716 @@
+{
+  "Name": "43_PC_013",
+  "Description": "Check the scale and pagination when Week is selected in \u0022Paging scale\u0022 dropdown list for scale 1 day slots, grouped by week in the Gantt view window of Projects/Tasks view ",
+  "Time": 73,
+  "Status": "Failed",
+  "BugRefId": "",
+  "Comment": "",
+  "Exception": "System.Exception: Expected value not found\n\t\tReturned Object--\u003E22\n   at XmlExecutor.ActionsExecutor.ExecuteCall(Object instance, TxNode\u00601 callingTree, MethodSignature signature) in /src/XmlExecutor/ActionsExecutor.cs:line 160",
+  "HashTag": {
+    "#NoSpace#": "",
+    "#CurrentMonth#": "6",
+    "#Space#": "",
+    "#M#": "6",
+    "#YY#": "26",
+    "#HH#": "20",
+    "#D#": "23",
+    "#DD#": "23",
+    "#MM#": "06",
+    "#YYYY#": "2026",
+    "#Month#": "June",
+    "#CurrentDate#": "23/06/2026",
+    "#YesterdayDate#": "22/06/2026",
+    "#DocPath#": "/src/pictures/",
+    "#CurrentDateAndTime#": "23/06/2026 00:00:00",
+    "#DownloadDirectory#": "/home/seluser/Downloads/",
+    "#CurrentWeekNumber#": "26",
+    "#1stdayMonthofCurrentWeek#": "June",
+    "#day1#": "22",
+    "#day7#": "28",
+    "#prevweeknumber#": "25",
+    "#7daysprevyear#": "2026",
+    "#7daysprevdate#": "16/06/2026",
+    "#1stdayMonthofPrevWeek#": "June",
+    "#prevday1#": "15",
+    "#prevday2#": "16",
+    "#prevday3#": "17",
+    "#prevday4#": "18",
+    "#prevday5#": "19",
+    "#prevday6#": "20",
+    "#prevday7#": "21",
+    "#nextweeknumber#": "27",
+    "#7daysnextyear#": "2026",
+    "#7daysnextdate#": "30/06/2026",
+    "#1stdayMonthofNextWeek#": "June",
+    "#nextday1#": "29",
+    "#nextday2#": "30",
+    "#nextday3#": "1",
+    "#nextday4#": "2",
+    "#nextday5#": "3",
+    "#nextday6#": "4",
+    "#nextday7#": "5"
+  },
+  "TestSteps": [
+    {
+      "StepName": "TestHeader",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "TxInterface",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Login",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "login": "responsable",
+        "password": "aaaaa"
+      }
+    },
+    {
+      "StepName": "MainWindow",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "NavigationTree",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectOT",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Select",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "value": "Projects"
+      }
+    },
+    {
+      "StepName": "EntityTree",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectEntity",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "nodes": "Projet-A-001"
+      }
+    },
+    {
+      "StepName": "MainToolbar",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "modelName": "Project view"
+      }
+    },
+    {
+      "StepName": "ReturnGanttInNewTab",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Content",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnToolbar",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Scale",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ClickArrow",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectItem",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "item": "1 day slots, grouped by week"
+      }
+    },
+    {
+      "StepName": "ReadSelected",
+      "StepType": "pass",
+      "StepSpaceNumber": 7,
+      "StepReturn": {
+        "ExpectedResult": "1 day slots, grouped by week"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "PagingScale",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ClickArrow",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectItem",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "item": "View 1 week"
+      }
+    },
+    {
+      "StepName": "ReadSelected",
+      "StepType": "pass",
+      "StepSpaceNumber": 7,
+      "StepReturn": {
+        "ExpectedResult": "View 1 week"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Today",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "IsButtonDisable",
+      "StepType": "pass",
+      "StepSpaceNumber": 6,
+      "StepReturn": {
+        "ExpectedResult": "False"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Previous page"
+      }
+    },
+    {
+      "StepName": "IsButtonDisable",
+      "StepType": "pass",
+      "StepSpaceNumber": 6,
+      "StepReturn": {
+        "ExpectedResult": "False"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "buttonName": "Next page"
+      }
+    },
+    {
+      "StepName": "ReturnGanttView",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnTaskGanttView",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ManageCommonMethods",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "GetCurrentWeekNumber",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "Hashtag": "#CurrentWeekNumber#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "GetWeekDays",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "date": "23/06/2026",
+        "format": "MMMM"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#1stdayMonthofCurrentWeek#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "GetWeekDays",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "date": "23/06/2026",
+        "format": "d"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#day1#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#day7#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "6"
+      }
+    },
+    {
+      "StepName": "GetNextOrPreviousWeekNumber",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "Hashtag": "#prevweeknumber#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "next": "False"
+      }
+    },
+    {
+      "StepName": "GetNextDate",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "Hashtag": "#7daysprevyear#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "days": "-7",
+        "format": "yyyy"
+      }
+    },
+    {
+      "StepName": "GetNextDate",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "Hashtag": "#7daysprevdate#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "days": "-7",
+        "format": "dd/MM/yyyy"
+      }
+    },
+    {
+      "StepName": "GetWeekDays",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "date": "#7daysprevdate#",
+        "format": "MMMM"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#1stdayMonthofPrevWeek#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "GetWeekDays",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "date": "#7daysprevdate#",
+        "format": "d"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#prevday1#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#prevday2#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "1"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#prevday3#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "2"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#prevday4#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "3"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#prevday5#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "4"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#prevday6#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "5"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#prevday7#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "6"
+      }
+    },
+    {
+      "StepName": "GetNextOrPreviousWeekNumber",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "Hashtag": "#nextweeknumber#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "next": "True"
+      }
+    },
+    {
+      "StepName": "GetNextDate",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "Hashtag": "#7daysnextyear#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "days": "7",
+        "format": "yyyy"
+      }
+    },
+    {
+      "StepName": "GetNextDate",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "Hashtag": "#7daysnextdate#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "days": "7",
+        "format": "dd/MM/yyyy"
+      }
+    },
+    {
+      "StepName": "GetWeekDays",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "date": "#7daysnextdate#",
+        "format": "MMMM"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#1stdayMonthofNextWeek#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "GetWeekDays",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "date": "#7daysnextdate#",
+        "format": "d"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#nextday1#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#nextday2#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "1"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#nextday3#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "2"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#nextday4#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "3"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#nextday5#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "4"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#nextday6#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "5"
+      }
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": {
+        "Hashtag": "#nextday7#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "6"
+      }
+    },
+    {
+      "StepName": "ReadGanttFirstHeader",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "pass",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "ExpectedResult": "W#CurrentWeekNumber# (#1stdayMonthofCurrentWeek# 2026)"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "index": "0"
+      }
+    },
+    {
+      "StepName": "ReadGanttSecondHeader",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ElementAt",
+      "StepType": "fail",
+      "StepSpaceNumber": 8,
+      "StepReturn": {
+        "ExpectedResult": "Mon #day1#"
+      },
+      "StepFailedReturn": "22\n   at XmlExecutor.ActionsExecutor.ExecuteCall(Object instance, TxNode\u00601 callingTree, MethodSignature signature) in /src/XmlExecutor/ActionsExecutor.cs:line 160",
+      "StepParameter": {
+        "index": "0"
+      }
+    }
+  ]
+}

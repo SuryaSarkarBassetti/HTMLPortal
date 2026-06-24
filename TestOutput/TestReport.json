@@ -1,35 +1,171 @@
 {
-  "ReleaseVersion": "7.0.2604",
-  "ReleaseNumber": "21056",
+  "ReleaseVersion": "7.0.2606",
+  "ReleaseNumber": "21100",
   "TagName": "",
   "isAdminTest": "Admin",
-  "DBType": "MSSQL2022",
-  "JobNumber": "10",
-  "JobDuration": "12h",
-  "DateTime": "May 2, 2026 03:40 PM",
+  "DBType": "sqlServer2022",
+  "JobNumber": "1",
+  "JobDuration": "5 hr 32 min",
+  "DateTime": "Jun 24, 2026 12:05 PM",
   "Module": [
     {
-      "ModuleName": "AAA",
-      "ExecutionTime": 632,
-      "TotalScripts": 3,
-      "TotalSucess": 1,
-      "TotalFail": 2,
+      "ModuleName": "TxGantt0",
+      "ExecutionTime": 5754.139,
+      "TotalScripts": 50,
+      "TotalSucess": 19,
+      "TotalFail": 31,
       "TotalNon": 0
     },
     {
-      "ModuleName": "AdWeb_Extractions",
-      "ExecutionTime": 271.088,
-      "TotalScripts": 56,
-      "TotalSucess": 35,
-      "TotalFail": 21,
+      "ModuleName": "TxGantt1",
+      "ExecutionTime": 5146.137,
+      "TotalScripts": 50,
+      "TotalSucess": 15,
+      "TotalFail": 35,
       "TotalNon": 0
     },
     {
-      "ModuleName": "AdWeb_ObjectType",
-      "ExecutionTime": 163.633,
-      "TotalScripts": 27,
-      "TotalSucess": 23,
-      "TotalFail": 4,
+      "ModuleName": "TxGantt10",
+      "ExecutionTime": 6313.087,
+      "TotalScripts": 50,
+      "TotalSucess": 8,
+      "TotalFail": 42,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt11",
+      "ExecutionTime": 5571.73,
+      "TotalScripts": 50,
+      "TotalSucess": 9,
+      "TotalFail": 41,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt12",
+      "ExecutionTime": 5869.076,
+      "TotalScripts": 50,
+      "TotalSucess": 3,
+      "TotalFail": 47,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt13",
+      "ExecutionTime": 5774.684,
+      "TotalScripts": 50,
+      "TotalSucess": 7,
+      "TotalFail": 43,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt14",
+      "ExecutionTime": 5419.782,
+      "TotalScripts": 50,
+      "TotalSucess": 16,
+      "TotalFail": 34,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt15",
+      "ExecutionTime": 5249.54,
+      "TotalScripts": 50,
+      "TotalSucess": 15,
+      "TotalFail": 35,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt16",
+      "ExecutionTime": 4782.2,
+      "TotalScripts": 50,
+      "TotalSucess": 38,
+      "TotalFail": 12,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt17",
+      "ExecutionTime": 2841.768,
+      "TotalScripts": 50,
+      "TotalSucess": 33,
+      "TotalFail": 17,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt18",
+      "ExecutionTime": 3723.544,
+      "TotalScripts": 50,
+      "TotalSucess": 12,
+      "TotalFail": 38,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt19",
+      "ExecutionTime": 2152.942,
+      "TotalScripts": 21,
+      "TotalSucess": 7,
+      "TotalFail": 14,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt2",
+      "ExecutionTime": 5051.205,
+      "TotalScripts": 50,
+      "TotalSucess": 21,
+      "TotalFail": 29,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt3",
+      "ExecutionTime": 5069.772,
+      "TotalScripts": 50,
+      "TotalSucess": 6,
+      "TotalFail": 44,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt4",
+      "ExecutionTime": 5070.082,
+      "TotalScripts": 50,
+      "TotalSucess": 19,
+      "TotalFail": 31,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt5",
+      "ExecutionTime": 5226.062,
+      "TotalScripts": 50,
+      "TotalSucess": 12,
+      "TotalFail": 38,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt6",
+      "ExecutionTime": 5459.077,
+      "TotalScripts": 50,
+      "TotalSucess": 10,
+      "TotalFail": 39,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt7",
+      "ExecutionTime": 4904.505,
+      "TotalScripts": 50,
+      "TotalSucess": 25,
+      "TotalFail": 25,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt8",
+      "ExecutionTime": 6691.519,
+      "TotalScripts": 50,
+      "TotalSucess": 26,
+      "TotalFail": 24,
+      "TotalNon": 0
+    },
+    {
+      "ModuleName": "TxGantt9",
+      "ExecutionTime": 5785.883,
+      "TotalScripts": 50,
+      "TotalSucess": 19,
+      "TotalFail": 31,
       "TotalNon": 0
     }
   ]
