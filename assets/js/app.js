@@ -109,8 +109,8 @@ async function initTestCasesData() {
          <div class="custom-dropdown" id="moduleDropdown">
 
         <div class="custom-dropdown-selected" id="selectedModuleText">
-           [${selectedModule.ModuleName}
-            <i class="fa-solid fa-angle-down small-arrow"></i>]
+           ${selectedModule.ModuleName}
+            <i class="fa-solid fa-angle-down small-arrow"></i>
         </div>
 
         <div class="custom-dropdown-menu" id="moduleDropdownMenu"></div>
@@ -583,6 +583,8 @@ function renderDetailContent(test, root) {
     if (!test || !root) return;
 
     const steps = test.TestSteps || [];
+    const hastag = test.HashTag || {};
+    // console.log("Rendering test details:", test, steps, hastag);
 
     // --- Summary ---
     setTextIn(root, "testDescrition", test.Description);
@@ -619,10 +621,10 @@ function renderDetailContent(test, root) {
         let icon = "";
         let body = "";
         if (step.StepReturn) {
-            body += `<div class="step-item-body">${getStepReturn(step.StepReturn)}</div>`;
+            body += `<div class="step-item-body">${getStepReturn(step.StepReturn, hastag)}</div>`;
         }
         if (step.StepFailedReturn) {
-            body += `<div class="step-item-body">Return Result : ${step.StepFailedReturn}</div>`;
+            body += `<div class="step-item-body">Return Result : ${`"`+step.StepFailedReturn+`"`}</div>`;
         }
         if (test.Exception && step.StepType?.toLowerCase() === "fail") {
             const error = test.Exception.replace(/\r\n|\n/g, "<br>");
@@ -646,7 +648,7 @@ function renderDetailContent(test, root) {
         div.className = className;
         div.style.setProperty("--delay", `${Math.min(index * 70, 1000)}ms`);
         div.innerHTML = `
-        <div class="step-item-title">${icon} ${step.StepName || ""} ${(step.StepParameter != null) ? ` &nbsp;&nbsp;{${formatStepData(step.StepParameter)}}` : ''}</div>
+        <div class="step-item-title">${icon} ${step.StepName || ""} ${(step.StepParameter != null) ? ` &nbsp;&nbsp;{${formatStepData(step.StepParameter, hastag)}}` : ''}</div>
         ${body}
         `;
         myIndex++;
@@ -663,7 +665,19 @@ function renderDetailContent(test, root) {
 
 }
 //Step Functions
-function getStepReturn(stepReturn = {}) {
+// function getStepReturn(stepReturn = {}) {
+//     const map = [
+//         { key: "ExpectedResult", label: "Expected Result" },
+//         { key: "Hashtag", label: "Hashtag" }
+//     ];
+
+//     for (const item of map) {
+//         const value = stepReturn[item.key]?.trim();
+//         if (stepReturn[item.key] != null) return `${item.label} : ${`"`+value+`"`}`;
+//     }
+//     return "";
+// }
+function getStepReturn(stepReturn = {}, hashTags = {}) {
     const map = [
         { key: "ExpectedResult", label: "Expected Result" },
         { key: "Hashtag", label: "Hashtag" }
@@ -671,15 +685,34 @@ function getStepReturn(stepReturn = {}) {
 
     for (const item of map) {
         const value = stepReturn[item.key]?.trim();
-        if (stepReturn[item.key] != null) return `${item.label} : ${value}`;
+
+        if (stepReturn[item.key] != null) {
+            return `${item.label} : ${resolveHashTag(value, hashTags)}`;
+        }
     }
+
     return "";
 }
-function formatStepData(stepData = {}) {
+
+
+function formatStepData(stepData = {}, hashTags = {}) {
     return Object.entries(stepData)
-        .map(([key, value]) => `${key} : ${value}`)
+        .map(([key, value]) => `${key} : ${resolveHashTag(String(value), hashTags)}`)
         .join(", ");
 }
+
+function resolveHashTag(value, hashTags = {}) {
+    if (!value || typeof value !== "string") return value;
+
+    // Check if value looks like a hashtag and exists in HashTag object
+    if (value.startsWith("#") && value.endsWith("#") && hashTags[value] !== undefined) {
+       return `"${value}" → "${hashTags[value]}"`;
+    }
+
+    return `"${value}"`;
+}
+
+
 //Test Steps 
 function openModal(test, rowElement) {
     setDisplay("emptyState", "none");

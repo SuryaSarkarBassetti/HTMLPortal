@@ -1,0 +1,260 @@
+{
+  "Name": "77_298",
+  "Description": "Check the functionality of replacing a template file with a valid extension file",
+  "Time": 65,
+  "Status": "Failed",
+  "BugRefId": "",
+  "Comment": "",
+  "Exception": "System.Exception: Expected value not found\n\t\t   at XmlExecutor.ActionsExecutor.ExecuteCall(Object instance, TxNode\u00601 callingTree, MethodSignature signature) in D:\\Projects\\Tags\\NewTxExtraction\\XmlExecutor\\ActionsExecutor.cs:line 160",
+  "HashTag": {
+    "#NoSpace#": "",
+    "#CurrentMonth#": "6",
+    "#Space#": "",
+    "#M#": "6",
+    "#YY#": "26",
+    "#HH#": "17",
+    "#D#": "18",
+    "#DD#": "18",
+    "#MM#": "06",
+    "#YYYY#": "2026",
+    "#Month#": "June",
+    "#CurrentDate#": "18/06/2026",
+    "#YesterdayDate#": "17/06/2026",
+    "#DocPath#": "D:\\DocumentsToLoad\\",
+    "#CurrentDateAndTime#": "18/06/2026 12:00:00 AM",
+    "#DownloadDirectory#": "C:\\Users\\surya.sarkar.BASSETTI\\Downloads",
+    "#77_298_LastDownloadFile1#": "C:\\Users\\surya.sarkar.BASSETTI\\Downloads\\TestPeople.xltx"
+  },
+  "TestSteps": [
+    {
+      "StepName": "TestHeader",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "TxInterface",
+      "StepType": "info",
+      "StepSpaceNumber": 0,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "GoToTxAdmin",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Login",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "login": "TEEXMA\\Admin",
+        "password": "aaaaa"
+      }
+    },
+    {
+      "StepName": "TxAdminWindow",
+      "StepType": "info",
+      "StepSpaceNumber": 2,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ManageNavigationPanel",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ClickNavigationItem",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "Name": "Extractions"
+      }
+    },
+    {
+      "StepName": "ReturnExtractions",
+      "StepType": "info",
+      "StepSpaceNumber": 3,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Sleep",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "timeOut": "5"
+      }
+    },
+    {
+      "StepName": "ReturnConfigurationPanel",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "SelectType",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "typeName": "[Excel] Our People Name"
+      }
+    },
+    {
+      "StepName": "ReturnSummary",
+      "StepType": "info",
+      "StepSpaceNumber": 4,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ConfigurationSettings",
+      "StepType": "info",
+      "StepSpaceNumber": 5,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Add",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReturnAddorEditExcelConfigurationSettings",
+      "StepType": "info",
+      "StepSpaceNumber": 6,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Content",
+      "StepType": "info",
+      "StepSpaceNumber": 7,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ManageTemplate",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "DownloadTemplate",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "Sleep",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "timeOut": "10"
+      }
+    },
+    {
+      "StepName": "ManageDownloadedFiles",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "GetLastDownloadedFile",
+      "StepType": "info",
+      "StepSpaceNumber": 10,
+      "StepReturn": {
+        "Hashtag": "#77_298_LastDownloadFile1#"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "DownloadDirectory": "C:\\Users\\surya.sarkar.BASSETTI\\Downloads"
+      }
+    },
+    {
+      "StepName": "ManageCommonMethods",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "CheckValueContains",
+      "StepType": "pass",
+      "StepSpaceNumber": 10,
+      "StepReturn": {
+        "ExpectedResult": "True"
+      },
+      "StepFailedReturn": null,
+      "StepParameter": {
+        "fullText": "#77_298_LastDownloadFile1#",
+        "containsValue": "TestPeople.xltx"
+      }
+    },
+    {
+      "StepName": "WorkSheetName",
+      "StepType": "info",
+      "StepSpaceNumber": 8,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ReadAllItem",
+      "StepType": "info",
+      "StepSpaceNumber": 9,
+      "StepReturn": null,
+      "StepFailedReturn": null,
+      "StepParameter": null
+    },
+    {
+      "StepName": "ElementCount",
+      "StepType": "fail",
+      "StepSpaceNumber": 10,
+      "StepReturn": {
+        "ExpectedResult": "3"
+      },
+      "StepFailedReturn": "4",
+      "StepParameter": null
+    }
+  ]
+}
